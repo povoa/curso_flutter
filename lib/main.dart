@@ -3,11 +3,13 @@ import 'package:flutter/material.dart';
 void main() {
   return runApp(
     MaterialApp(
+      debugShowCheckedModeBanner: false,
       home: Scaffold(
-        backgroundColor: Colors.red,
+        backgroundColor: Colors.grey[800],
         appBar: AppBar(
+          centerTitle: true,
           title: Text('Dicee'),
-          backgroundColor: Colors.red,
+          backgroundColor: Colors.grey[800],
         ),
         body: DicePage(),
       ),
@@ -18,6 +20,21 @@ void main() {
 class DicePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return Center(
+      child: Row(
+        children: <Widget>[
+          Expanded(
+              child: Padding(
+            padding: const EdgeInsets.all(16.0),
+            child: Image.asset('images/dice1.png'),
+          )),
+          Expanded(
+              child: Padding(
+            padding: const EdgeInsets.all(16.0),
+            child: Image.asset('images/dice2.png'),
+          )),
+        ],
+      ),
+    );
   }
 }
